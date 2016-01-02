@@ -4,6 +4,7 @@ Assignment 3 by: Guelor Emanuel 100884107, and Tarek Karam 100886712
 Brief Info:
 --------------------
 - This is a Marking manager for ta's webApp. 
+  
   ```
 allows user tp manage a marking chart and allows the students, prof. and TA's to login and view the contents. 
 When the prof. logs in they are able to edit the start and deadline dates. 
