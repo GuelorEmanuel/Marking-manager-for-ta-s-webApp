@@ -1,5 +1,5 @@
-#Assignment #2: The Heat Is on:Node.js Internet Of Things
-Assignment 3 by: Guelor Emanuel 100884107, and Tarek Karam 100886712
+#Assignment #3: Marking manager 
+by: Guelor Emanuel 100884107, and Tarek Karam 100886712
 
 Brief Info:
 --------------------
