@@ -1,0 +1,569 @@
+doctype html
+html
+  head
+    meta(http-equiv='Content-Type', content='text/html; charset=iso-8859-1')
+    meta(name='GENERATOR', content='Microsoft FrontPage 12.0')
+    title COMP
+    style(type='text/css').
+      .bold {
+      font-weight: bold;
+      }
+      .courier {
+      font-family: "Courier New", Courier, monospace;
+      }
+      red {
+      color: #FF0000;
+      }
+      .arial {
+      font-family: Arial, Helvetica, sans-serif;
+      }
+      green {
+      color: #090;
+      }
+      .green {
+      color: #090;
+      }
+      red {
+      color: #F00;
+      }
+      .red {
+      color: #F00;
+      }
+      .auto-style21 {font-size: medium;
+      }
+  body.arial
+
+    b
+      font(color='#009900')
+        font(size='+3') COMP 2406 Fall 2014
+    b
+      font(color='#009900')
+        font(size='+3') Assignment Grading
+    br
+    b(style='color: rgb(255, 0, 0);')
+      font(size='+3')
+        br
+  form(action="/update", method="post")
+    hr
+    p
+      b
+        font(size='4', color='#FF0000')
+          | This chart is to help us track when assignment grading is complete. Culearn does not provide an easy way to do this.
+    p
+    hr
+    table(width='928', border='1', cellpadding='5')
+      tr
+        th(width='45', scope='col') &nbsp;
+        th(width='208', scope='col') TA
+        th(width='142', scope='col') Start Date
+        th(width='128', scope='col') Deadline
+        th(width='162', scope='col')
+
+            | Completion
+            br
+            |       Date
+        th(width='155', scope='col') Comment
+      tr
+        th(scope='row') A1
+        td
+          span.auto-style21(style='font-weight: bold;') Chris
+        td
+          -if(userType === 'prof')
+            input(type="text", name="startdate1", placeholder= "Month day, year", value= compDates.startdate1)
+          -else
+            = compDates.startdate1
+        td
+          -if(userType === 'prof')
+            input(type="text", name="deaddate1", placeholder= "Month day, year", value= compDates.deaddate1)
+          -else
+            = compDates.deaddate1
+        td
+          -if(userType === 'ta')
+            input(type="text", name="compdate1", placeholder= "Month day, year", value= compDates.compdate1)
+          -else
+            = compDates.compdate1
+        td
+          -if( Date.parse(compDates.deaddate1) >= Date.parse(compDates.compdate1))
+            span.green
+              = compDates.onTime
+          -else if ( Date.parse(compDates.deaddate1) < Date.parse(compDates.compdate1))
+            span.red
+              = compDates.notOnTime
+          -else if ( (compDates.startdate1 != NULL) && (compDates.deaddate1 != NULL))
+            span.green
+              = compDates.inPos
+      tr
+        th(scope='row') &nbsp;
+        td
+          span(style='font-weight: bold;') Lucas
+        td
+          -if(userType === 'prof')
+            input(type="text", name="startdate2", placeholder= "Month day, year", value= compDates.startdate2)
+          -else
+            = compDates.startdate2
+        td
+          -if(userType === 'prof')
+            input(type="text", name="deaddate2", placeholder= "Month day, year", value= compDates.deaddate2)
+          -else
+            = compDates.deaddate2
+        td
+          -if(userType === 'ta')
+            input(type="text", name="compdate2", placeholder= "Month day, year", value= compDates.compdate2)
+          -else
+            = compDates.compdate2
+        td
+          -if( Date.parse(compDates.deaddate2) >= Date.parse(compDates.compdate2))
+            span.green
+              = compDates.onTime
+          -else if ( Date.parse(compDates.deaddate2) < Date.parse(compDates.compdate2))
+            span.red
+              = compDates.notOnTime
+          -else if ( (compDates.startdate2 != NULL) && (compDates.deaddate2 != NULL))
+            span.green
+              = compDates.inPos
+      tr
+        th(scope='row') &nbsp;
+        td
+          span(style='font-weight: bold;') Muhammad
+        td
+          -if(userType === 'prof')
+            input(type="text", name="startdate3", placeholder= "Month day, year", value= compDates.startdate3)
+          -else
+            = compDates.startdate3
+        td
+          -if(userType === 'prof')
+            input(type="text", name="deaddate3", placeholder= "Month day, year", value= compDates.deaddate3)
+          -else
+            = compDates.deaddate3
+        td
+          -if(userType === 'ta')
+            input(type="text", name="compdate3", placeholder= "Month day, year", value= compDates.compdate3)
+          -else
+            = compDates.compdate3
+        td
+          -if( Date.parse(compDates.deaddate3) >= Date.parse(compDates.compdate3))
+            span.green
+              = compDates.onTime
+          -else if ( Date.parse(compDates.deaddate3) < Date.parse(compDates.compdate3))
+            span.red
+              = compDates.notOnTime
+          -else if ( (compDates.startdate3 != NULL) && (compDates.deaddate3 != NULL))
+            span.green
+              = compDates.inPos
+      tr
+        th(scope='row') &nbsp;
+        td
+          span(style='font-weight: bold;') Lee
+        td
+          -if(userType === 'prof')
+            input(type="text", name="startdate4", placeholder= "Month day, year", value= compDates.startdate4)
+          -else
+            = compDates.startdate4
+        td
+          -if(userType === 'prof')
+            input(type="text", name="deaddate4", placeholder= "Month day, year", value= compDates.deaddate4)
+          -else
+            = compDates.deaddate4
+        td
+          -if(userType === 'ta')
+            input(type="text", name="compdate4", placeholder= "Month day, year", value= compDates.compdate4)
+          -else
+            = compDates.compdate4
+        td
+          -if( Date.parse(compDates.deaddate4) >= Date.parse(compDates.compdate4))
+            span.green
+              = compDates.onTime
+          -else if ( Date.parse(compDates.deaddate4) < Date.parse(compDates.compdate4))
+            span.red
+              = compDates.notOnTime
+          -else if ( (compDates.startdate4 != NULL) && (compDates.deaddate4 != NULL))
+            span.green
+              = compDates.inPos
+      tr
+        th(bgcolor='#CCCCCC', scope='row') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+      tr
+        th(scope='row') A2
+        td
+          span.auto-style21(style='font-weight: bold;') Chris
+        td
+          -if(userType === 'prof')
+            input(type="text", name="startdate5", placeholder= "Month day, year", value= compDates.startdate5)
+          -else
+            = compDates.startdate5
+        td
+          -if(userType === 'prof')
+            input(type="text", name="deaddate5", placeholder= "Month day, year", value= compDates.deaddate5)
+          -else
+            = compDates.deaddate5
+        td
+          -if(userType === 'ta')
+            input(type="text", name="compdate5", placeholder= "Month day, year", value= compDates.compdate5)
+          -else
+            = compDates.compdate5
+        td
+          -if( Date.parse(compDates.deaddate5) >= Date.parse(compDates.compdate5))
+            span.green
+              = compDates.onTime
+          -else if ( Date.parse(compDates.deaddate5) < Date.parse(compDates.compdate5))
+            span.red
+              = compDates.notOnTime
+          -else if ( (compDates.startdate5 != NULL) && (compDates.deaddate5 != NULL))
+            span.green
+              = compDates.inPos
+      tr
+        th(scope='row') &nbsp;
+        td
+          span(style='font-weight: bold;') Lucas
+        td
+          -if(userType === 'prof')
+            input(type="text", name="startdate6", placeholder= "Month day, year", value= compDates.startdate6)
+          -else
+            = compDates.startdate6
+        td
+          -if(userType === 'prof')
+            input(type="text", name="deaddate6", placeholder= "Month day, year", value= compDates.deaddate6)
+          -else
+            = compDates.deaddate6
+        td
+          -if(userType === 'ta')
+            input(type="text", name="compdate6", placeholder= "Month day, year", value= compDates.compdate6)
+          -else
+            = compDates.compdate6
+        td
+          -if( Date.parse(compDates.deaddate6) >= Date.parse(compDates.compdate6))
+            span.green
+              = compDates.onTime
+          -else if ( Date.parse(compDates.deaddate6) < Date.parse(compDates.compdate6))
+            span.red
+              = compDates.notOnTime
+          -else if ( (compDates.startdate6 != NULL) && (compDates.deaddate6 != NULL))
+            span.green
+              = compDates.inPos
+      tr
+        th(scope='row') &nbsp;
+        td
+          span(style='font-weight: bold;') Muhammad
+        td
+          -if(userType === 'prof')
+            input(type="text", name="startdate7", placeholder= "Month day, year", value= compDates.startdate7)
+          -else
+            = compDates.startdate7
+        td
+          -if(userType === 'prof')
+            input(type="text", name="deaddate7", placeholder= "Month day, year", value= compDates.deaddate7)
+          -else
+            = compDates.deaddate7
+        td
+          -if(userType === 'ta')
+            input(type="text", name="compdate7", placeholder= "Month day, year", value= compDates.compdate7)
+          -else
+            = compDates.compdate7
+        td
+          -if( Date.parse(compDates.deaddate7) >= Date.parse(compDates.compdate7))
+            span.green
+              = compDates.onTime
+          -else if ( Date.parse(compDates.deaddate7) < Date.parse(compDates.compdate7))
+            span.red
+              = compDates.notOnTime
+          -else if ( (compDates.startdate7 != NULL) && (compDates.deaddate7 != NULL))
+            span.green
+              = compDates.inPos
+
+      th(scope='row') &nbsp;
+      td
+        span(style='font-weight: bold;') Lee
+      td
+          -if(userType === 'prof')
+            input(type="text", name="startdate8", placeholder= "Month day, year", value= compDates.startdate8)
+          -else
+            = compDates.startdate8
+      td
+          -if(userType === 'prof')
+            input(type="text", name="deaddate8", placeholder= "Month day, year", value= compDates.deaddate8)
+          -else
+            = compDates.deaddate8
+      td
+          -if(userType === 'ta')
+            input(type="text", name="compdate8", placeholder= "Month day, year", value= compDates.compdate8)
+          -else
+            = compDates.compdate8
+      td
+        -if( Date.parse(compDates.deaddate8) >= Date.parse(compDates.compdate8))
+          span.green
+            = compDates.onTime
+        -else if ( Date.parse(compDates.deaddate8) < Date.parse(compDates.compdate8))
+          span.red
+            = compDates.notOnTime
+        -else if ( (compDates.startdate8 != NULL) && (compDates.deaddate8 != NULL))
+          span.green
+            = compDates.inPos
+
+      tr
+        th(bgcolor='#CCCCCC', scope='row') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+      tr
+        th(scope='row') A3
+        td
+          span.auto-style21(style='font-weight: bold;') Chris
+        td
+          -if(userType === 'prof')
+            input(type="text", name="startdate9", placeholder= "Month day, year", value= compDates.startdate9)
+          -else
+            = compDates.startdate9
+        td
+          -if(userType === 'prof')
+            input(type="text", name="deaddate9", placeholder= "Month day, year", value= compDates.deaddate9)
+          -else
+            = compDates.deaddate9
+        td
+          -if(userType === 'ta')
+            input(type="text", name="compdate9", placeholder= "Month day, year", value= compDates.compdate9)
+          -else
+            = compDates.compdate9
+        td
+          -if( Date.parse(compDates.deaddate9) >= Date.parse(compDates.compdate9))
+            span.green
+              = compDates.onTime  
+          -else if ( Date.parse(compDates.deaddate9) < Date.parse(compDates.compdate9))
+            span.red
+              = compDates.notOnTime
+          -else if ( (compDates.startdate9 != NULL) && (compDates.deaddate9 != NULL))
+            span.green
+              = compDates.inPos
+  
+      tr
+        th(scope='row') &nbsp;
+        td
+          span(style='font-weight: bold;') Lucas
+        td
+          -if(userType === 'prof')
+            input(type="text", name="startdate10", placeholder= "Month day, year", value= compDates.startdate10)
+          -else
+            = compDates.startdate10
+        td
+          -if(userType === 'prof')
+            input(type="text", name="deaddate10", placeholder= "Month day, year", value= compDates.deaddate10)
+          -else
+            = compDates.deaddate10
+        td
+          -if(userType === 'ta')
+            input(type="text", name="compdate10", placeholder= "Month day, year", value= compDates.compdate10)
+          -else
+            = compDates.compdate10
+        td
+          -if( Date.parse(compDates.deaddate10) >= Date.parse(compDates.compdate10))
+            span.green
+              = compDates.onTime
+          -else if ( Date.parse(compDates.deaddate10) < Date.parse(compDates.compdate10))
+            span.red
+              = compDates.notOnTime
+          -else if ( (compDates.startdate10 != NULL) && (compDates.deaddate10 != NULL))
+            span.green
+              = compDates.inPos
+      tr
+        th(scope='row') &nbsp;
+        td
+          span(style='font-weight: bold;') Muhammad
+        td
+          -if(userType === 'prof')
+            input(type="text", name="startdate11", placeholder= "Month day, year", value= compDates.startdate11)
+          -else
+            = compDates.startdate11
+        td
+          -if(userType === 'prof')
+            input(type="text", name="deaddate11", placeholder= "Month day, year", value= compDates.deaddate11)
+          -else
+            = compDates.deaddate11
+        td
+          -if(userType === 'ta')
+            input(type="text", name="compdate11", placeholder= "Month day, year", value= compDates.compdate11)
+          -else
+            = compDates.compdate11
+        td
+          -if( Date.parse(compDates.deaddate11) >= Date.parse(compDates.compdate11))
+            span.green
+              = compDates.onTime 
+          -else if ( Date.parse(compDates.deaddate11) < Date.parse(compDates.compdate11))
+            span.red
+              = compDates.notOnTime  
+          -else if ( (compDates.startdate11 != NULL) && (compDates.deaddate11 != NULL))
+            span.green
+              = compDates.inPos 
+      tr
+        th(scope='row') &nbsp;
+        td
+          span(style='font-weight: bold;') Lee
+        td
+          -if(userType === 'prof')
+            input(type="text", name="startdate12", placeholder= "Month day, year", value= compDates.startdate12)
+          -else
+            = compDates.startdate12
+        td
+          -if(userType === 'prof')
+            input(type="text", name="deaddate12", placeholder= "Month day, year", value= compDates.deaddate12)
+          -else
+            = compDates.deaddate12
+        td
+          -if(userType === 'ta')
+            input(type="text", name="compdate12", placeholder= "Month day, year", value= compDates.compdate12)
+          -else
+            = compDates.compdate12
+        td
+          -if( Date.parse(compDates.deaddate12) >= Date.parse(compDates.compdate12))
+            span.green
+              = compDates.onTime  
+          -else if ( Date.parse(compDates.deaddate12) < Date.parse(compDates.compdate12))
+            span.red
+              = compDates.notOnTime  
+          -else if ( (compDates.startdate12 != NULL) && (compDates.deaddate12 != NULL))
+            span.green
+              = compDates.inPos 
+      tr
+        th(bgcolor='#CCCCCC', scope='row') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+      tr
+        th(scope='row') A4
+        td
+          span.auto-style21(style='font-weight: bold;') Chris
+        td
+          -if(userType === 'prof')
+            input(type="text", name="startdate13", placeholder= "Month day, year", value= compDates.startdate13)
+          -else
+            = compDates.startdate13
+        td
+          -if(userType === 'prof')
+            input(type="text", name="deaddate13", placeholder= "Month day, year", value= compDates.deaddate13)
+          -else
+            = compDates.deaddate13
+        td
+          -if(userType === 'ta')
+            input(type="text", name="compdate13", placeholder= "Month day, year", value= compDates.compdate13)
+          -else
+            = compDates.compdate13
+        td
+          -if( Date.parse(compDates.deaddate13) >= Date.parse(compDates.compdate13))
+            span.green
+              = compDates.onTime  
+          -else if ( Date.parse(compDates.deaddate13) < Date.parse(compDates.compdate13))
+            span.red
+              = compDates.notOnTime 
+          -else if ( (compDates.startdate13 != NULL) && (compDates.deaddate13 != NULL))
+            span.green               
+              = compDates.inPos 
+      tr
+        th(scope='row') &nbsp;
+        td
+          span(style='font-weight: bold;') Lucas
+        td
+          -if(userType === 'prof')
+            input(type="text", name="startdate14", placeholder= "Month day, year", value= compDates.startdate14)
+          -else
+            = compDates.startdate14
+        td
+          -if(userType === 'prof')
+            input(type="text", name="deaddate14", placeholder= "Month day, year", value= compDates.deaddate14)
+          -else
+            = compDates.deaddate14
+        td
+          -if(userType === 'ta')
+            input(type="text", name="compdate14", placeholder= "Month day, year", value= compDates.compdate14)
+          -else
+            = compDates.compdate14
+        td
+          -if( Date.parse(compDates.deaddate14) >= Date.parse(compDates.compdate14))
+            span.green
+              = compDates.onTime 
+          -else if ( Date.parse(compDates.deaddate14) < Date.parse(compDates.compdate14))
+            span.red
+              = compDates.notOnTime  
+          -else if ( (compDates.startdate14 != NULL) && (compDates.deaddate14 != NULL))
+            span.green
+              = compDates.inPos 
+      tr
+        th(scope='row') &nbsp;
+        td
+          span(style='font-weight: bold;') Muhammad
+        td
+          -if(userType === 'prof')
+            input(type="text", name="startdate15", placeholder= "Month day, year", value= compDates.startdate15)
+          -else
+            = compDates.startdate15
+        td
+          -if(userType === 'prof')
+            input(type="text", name="deaddate15", placeholder= "Month day, year", value= compDates.deaddate15)
+          -else
+            = compDates.deaddate15
+        td
+          -if(userType === 'ta')
+            input(type="text", name="compdate15", placeholder= "Month day, year", value= compDates.compdate15)
+          -else
+            = compDates.compdate15
+        td
+          -if( Date.parse(compDates.deaddate15) >= Date.parse(compDates.compdate15))
+            span.green
+              = compDates.onTime
+          -else if ( Date.parse(compDates.deaddate15) < Date.parse(compDates.compdate15))
+            span.red
+              = compDates.notOnTime
+          -else if ( (compDates.startdate15 != NULL) && (compDates.deaddate15 != NULL))
+            span.green
+              = compDates.inPos
+      tr
+        th(scope='row') &nbsp;
+        td
+          span(style='font-weight: bold;') Lee
+        td
+          -if(userType === 'prof')
+            input(type="text", name="startdate16", placeholder= "Month day, year", value= compDates.startdate16)
+          -else
+            = compDates.startdate16
+        td
+          -if(userType === 'prof')
+            input(type="text", name="deaddate16", placeholder= "Month day, year", value= compDates.deaddate16)
+          -else
+            = compDates.deaddate16
+        td
+          -if(userType === 'ta')
+            input(type="text", name="compdate16", placeholder= "Month day, year", value= compDates.compdate16)
+          -else
+            = compDates.compdate16
+        td
+          -if( Date.parse(compDates.deaddate16) >= Date.parse(compDates.compdate16))
+            span.green
+              = compDates.onTime
+          -else if ( Date.parse(compDates.deaddate16) < Date.parse(compDates.compdate16))
+            span.red
+              = compDates.notOnTime
+          -else if ( (compDates.startdate16 != NULL) && (compDates.deaddate16 != NULL))
+            span.green
+              = compDates.inPos
+      tr
+        th(bgcolor='#CCCCCC', scope='row') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+        td(bgcolor='#CCCCCC') &nbsp;
+    br
+    font(size='+1')
+    button(type="submit") Update
+  form(action="/logout", method="post")
+    button(type="submit") Logout
+      br
+  h2 Users logged in
+  ul
+    each val, user in loggedInUsers
+      li= user
